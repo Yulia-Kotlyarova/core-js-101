@@ -1,6 +1,6 @@
 /* *******************************************************************************************
  *                                                                                           *
- * Plese read the following tutorial before implementing tasks:                              *
+ * Please read the following tutorial before implementing tasks:                              *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates           *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number   *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math     *
@@ -9,9 +9,9 @@
 
 
 /**
- * Returns an area of a rectangle given by width and heigth.
+ * Returns an area of a rectangle given by width and height.
  *
- * @param {numder} width
+ * @param {number} width
  * @param {number} height
  * @return {number}
  *
@@ -19,8 +19,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(width, height) {
+  return width * height;
 }
 
 
@@ -35,14 +35,14 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCicleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCicleCircumference(radius) {
+  return 2 * Math.PI * radius;
 }
 
 /**
  * Returns an average of two given numbers.
  *
- * @param {numder} value1
+ * @param {number} value1
  * @param {number} value2
  * @return {number}
  *
@@ -56,7 +56,7 @@ function getAverage(/* value1, value2 */) {
 }
 
 /**
- * Returns a distance beetween two points by cartesian coordinates.
+ * Returns a distance between two points by cartesian coordinates.
  *
  * @param {number} x1
  * @param {number} y1
@@ -125,8 +125,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return +value.toString().split('').slice(-1);
 }
 
 
@@ -141,8 +141,8 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return +value;
 }
 
 /**
@@ -200,12 +200,16 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  // eslint-disable-next-line no-plusplus
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
 }
 
 /**
- * Tries to convert value to number and returns it if conversion was successfull;
+ * Tries to convert value to number and returns it if conversion was successful;
  * otherwise returns default value passed as a second argument.
  *
  * @param {any} value
